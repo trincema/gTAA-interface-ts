@@ -60,4 +60,21 @@ export interface BrowserActions {
     */
     sleep(seconds: number): Promise<void>;
 
+    /**
+     * Make GET request and return the given Object type.
+     * @param url The url of the GET request.
+     * @param log Optional log object to log error messages to external logger.
+     * @return The HTTP response wrapped in given object type.
+    */
+    getRequest<Type>(url: string, log?: any): Promise<any>;
+
+    /**
+     * Make POST request and return the given Object type.
+     * @param url The url of the POST request.
+     * @param payload The payload to be sent in the POST request.
+     * @param log Optional log object to log error messages to external logger.
+     * @return The HTTP response wrapped in given object type.
+    */
+    postRequest<Type>(url: string, payload: Object, log?: any): Promise<any>;
+
 }
