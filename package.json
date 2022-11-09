@@ -1,6 +1,6 @@
 {
   "name": "gtaa-interface-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generic Test Automation Architecture Interface for Typescript projects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,6 +15,9 @@
   "keywords": [],
   "author": "Emanuel TRINC",
   "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
   "bugs": {
     "url": "https://github.com/trincema/gTAA-interface-ts/issues"
   },
