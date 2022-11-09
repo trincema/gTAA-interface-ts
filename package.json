@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
-    "prepackage": "pack"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
