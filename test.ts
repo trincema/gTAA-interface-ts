@@ -30,6 +30,12 @@ class BrowserAction implements BrowserActions {
     sleep(seconds: number): Promise<void> {
         throw new Error('Method not implemented.');
     }
+    getRequest<Type>(url: string, log?: any): Promise<any> {
+        throw new Error('Method not implemented.');
+    }
+    postRequest<Type>(url: string, payload: Object, log?: any): Promise<any> {
+        throw new Error('Method not implemented.');
+    }
 }
 
 class BrowserView implements BrowserViewable {
