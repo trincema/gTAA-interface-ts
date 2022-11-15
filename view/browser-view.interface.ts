@@ -47,4 +47,17 @@ export interface BrowserViewable {
      * @param locator Element locator as string, could be a css locator.
     */
     elementIsClickableByIndex(locator: string, index: number): Promise<boolean>;
+
+   /**
+     * Wait for element on the screen and fetch and return its text.
+     * @param locator Element locator as string, could be a CSS locator.
+    */
+    elementText(locator: string, scroll: boolean, timeout: number): Promise<string>;
+
+    /**
+     * Check if an element is currently displayed in the browser.
+     * @param locator Element locator as string, could be a CSS selector.
+    */
+    elementIsVisible(locator: string): Promise<boolean>;
+
 }
