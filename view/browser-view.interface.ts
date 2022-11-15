@@ -16,7 +16,7 @@ export interface BrowserViewable {
      * Wait for element on the screen and fetch and return its text.
      * @param locator Element locator as string, could be a css locator.
     */
-    elementText(locator: string, scroll: boolean, timeout: number);
+    elementText(locator: string, scroll: boolean, timeout: number): Promise<string>;
 
     /**
      * Check if an element is currently visible in the browser.
