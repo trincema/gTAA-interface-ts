@@ -66,11 +66,17 @@ export interface BrowserActions {
 
     /**
      * Make GET request and return the given Object type as response.
+     * @param url The url to which the POST request is to be made.
+     * @param payload The data to be sent to the server.
+     * @param log External log object to log any errors to the caller.
     */
     getRequest<Type>(url: string, log: any): Promise<any>;
 
     /**
      * Make POST request and return the given Object type as response.
+     * @param url The url to which the POST request is to be made.
+     * @param payload The data to be sent to the server.
+     * @param log External log object to log any errors to the caller.
     */
     postRequest<Type>(url: string, payload: Object, log: any): Promise<any>;
 
