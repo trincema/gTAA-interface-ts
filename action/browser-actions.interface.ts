@@ -42,6 +42,16 @@ export interface BrowserActions {
     inputValue(locator: string, value: string, timeout: number): Promise<void>;
 
     /**
+     * Appending the given string to the input element identified by the given locator.
+     * This is helpful for dynamic input fields which have processing on them,
+     * since it can cause the content to not be entered properly.
+     * @param locator The locator of the HTML input element.
+     * @param value The value to be inputed in the element.
+     * @param timeout Timeout to wait for element to be interactable, default being 1 minute.
+    */
+    appendToInput(locator: string, value: string, timeout: number): Promise<void>;
+
+    /**
      * Scroll to element identified by the given locator.
      * @param locator The locator of the HTML input element.
     */
@@ -55,10 +65,32 @@ export interface BrowserActions {
     scrollToElementByIndex(locator: string, index: number): Promise<void>;
 
     /**
+     * Make GET request and return the given Object type as response.
+     * @param url The url to which the POST request is to be made.
+     * @param payload The data to be sent to the server.
+     * @param log External log object to log any errors to the caller.
+    */
+    getRequest<Type>(url: string, log: any): Promise<any>;
+
+    /**
+     * Make POST request and return the given Object type as response.
+     * @param url The url to which the POST request is to be made.
+     * @param payload The data to be sent to the server.
+     * @param log External log object to log any errors to the caller.
+    */
+    postRequest<Type>(url: string, payload: Object, log: any): Promise<any>;
+
+    /**
      * Pause the current execution a given number of seconds.
      * @param seconds The given number of seconds to pause the current execution.
     */
     sleep(seconds: number): Promise<void>;
+
+    /**
+     * Pause the current execution a given number of mili-seconds.
+     * @param milliseconds The given number of mili-seconds to pause the current execution.
+    */
+    sleepMilis(milliseconds: number): Promise<void>;
 
     /**
      * Make GET request and return the given Object type.
