@@ -1,6 +1,6 @@
 {
   "name": "gtaa-interface-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generic Test Automation Architecture Interface for Typescript projects",
   "main": "index.js",
   "scripts": {
