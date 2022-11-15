@@ -3,13 +3,48 @@
 */
 export interface BrowserViewable {
     /**
-     * Generic method to get the URL of a browser tab.
+     * Get the URL of a browser tab.
      */
-    browserUrl();
+    browserUrl(): Promise<string>;
 
     /**
-     * Generic method to wait for element on the screen and fetch and return its text.
+     * Get the current browser name.
+    */
+    browserName(): Promise<string>;
+
+    /**
+     * Wait for element on the screen and fetch and return its text.
      * @param locator Element locator as string, could be a css locator.
     */
     elementText(locator: string, scroll: boolean, timeout: number);
+
+    /**
+     * Check if an element is currently visible in the browser.
+     * @param locator Element locator as string, could be a css locator.
+    */
+    elementIsVisible(locator: string): Promise<boolean>;
+
+    /**
+     * Get the invisible element status.
+     * @param locator Element locator as string, could be a css locator.
+    */
+    elementIsInvisible(locator: string): Promise<boolean>;
+
+    /**
+     * Get the enabled element status.
+     * @param locator Element locator as string, could be a css locator.
+    */
+    elementIsEnabled(locator: string): Promise<boolean>;
+
+    /**
+     * Get the clickable element status.
+     * @param locator Element locator as string, could be a css locator.
+    */
+    elementIsClickable(locator: string): Promise<boolean>;
+
+    /**
+     * Get the clickable element status by index.
+     * @param locator Element locator as string, could be a css locator.
+    */
+    elementIsClickableByIndex(locator: string, index: number): Promise<boolean>;
 }

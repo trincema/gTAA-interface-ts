@@ -42,6 +42,16 @@ export interface BrowserActions {
     inputValue(locator: string, value: string, timeout: number);
 
     /**
+     * Appending the given string to the input element identified by the given locator.
+     * This is helpful for dynamic input fields which have processing on them,
+     * since it can cause the content to not be entered properly.
+     * @param locator The locator of the HTML input element.
+     * @param value The value to be inputed in the element.
+     * @param timeout Timeout to wait for element to be interactable, default being 1 minute.
+    */
+    appendToInput(locator: string, value: string, timeout: number): Promise<void>;
+
+    /**
      * Scroll to element identified by the given locator.
      * @param locator The locator of the HTML input element.
     */
@@ -55,9 +65,15 @@ export interface BrowserActions {
     scrollToElementByIndex(locator: string, index: number);
 
     /**
-     * Generic method to pause the current execution a given number of seconds.
+     * Pause the current execution a given number of seconds.
      * @param seconds The given number of seconds to pause the current execution.
     */
-    sleep(seconds: number);
+    sleep(seconds: number): Promise<void>;
+
+    /**
+     * Pause the current execution a given number of mili-seconds.
+     * @param milliseconds The given number of mili-seconds to pause the current execution.
+    */
+    sleepMilis(milliseconds: number): Promise<void>;
 
 }
