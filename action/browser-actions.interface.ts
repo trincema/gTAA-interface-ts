@@ -65,6 +65,16 @@ export interface BrowserActions {
     scrollToElementByIndex(locator: string, index: number);
 
     /**
+     * Make GET request and return the given Object type as response.
+    */
+    getRequest<Type>(url: string, log: any): Promise<any>;
+
+    /**
+     * Make POST request and return the given Object type as response.
+    */
+    postRequest<Type>(url: string, payload: Object, log: any): Promise<any>;
+
+    /**
      * Pause the current execution a given number of seconds.
      * @param seconds The given number of seconds to pause the current execution.
     */
